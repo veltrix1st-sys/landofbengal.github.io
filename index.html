@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Land of Bengal | ১০% খাঁটি সুন্দরবনের মধু</title>
+  <meta name="description" content="Land of Bengal - সুন্দরবনের ১০% খাঁটি চাকের মধু। ল্যাব টেস্টেড। ভেজাল প্রমাণে ১০০% টাকা ফেরত।">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --gold: #d4af37;
+      --gold-dark: #b8960c;
+      --black: #0a0a0a;
+      --dark-gray: #1a1a1a;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    
+    body { 
+      font-family: 'Hind Siliguri', sans-serif; 
+      background: var(--black);
+      color: #fff;
+      overflow-x: hidden;
+    }
+    
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: 
+        radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+      z-index: -2;
+      animation: pulse 8s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+    
+    .honey-drip {
+      position: fixed;
+      top: -50px;
+      width: 3px;
+      height: 50px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      border-radius: 0 0 50% 50%;
+      animation: drip 4s infinite linear;
+      opacity: 0.3;
+      z-index: -1;
+    }
+    
+    @keyframes drip {
+      0% { transform: translateY(0); opacity: 0.3; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    nav {
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 18px 0;
+    }
+    
+    .nav-content {
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px; font-weight: 700;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 1.5px;
+    }
+    
+    .nav-links {
+      display: flex; gap: 30px; list-style: none;
+    }
+    
+    .nav-links a {
+      color: #ccc; text-decoration: none;
+      font-size: 15px; transition: 0.3s;
+      position: relative;
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px; left: 0;
+      width: 0; height: 2px;
+      background: var(--gold);
+      transition: width 0.3s;
+    }
+    
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a:hover { color: var(--gold); }
+    
+    .hero {
+      padding: 100px 0 80px;
+      text-align: center;
+    }
+    
+    .hero-badge {
+      display: inline-block;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 13px;
+      color: var(--gold);
+      margin-bottom: 25px;
+    }
+    
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 64px; font-weight: 800;
+      background: linear-gradient(135deg, #fff 0%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+    
+    .hero p {
+      font-size: 18px; color: #aaa;
+      max-width: 600px; margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+    
+    .hero-btns {
+      display: flex; gap: 15px; justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn-primary {
+      padding: 16px 35px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      color: #000; border: none; border-radius: 14px;
+      font-weight: 700; font-size: 16px; cursor: pointer;
+      text-decoration: none; display: inline-block;
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+      transition: all 0.3s;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6);
+    }
+    
+    .btn-secondary {
+      padding: 16px 35px;
+      background: transparent;
+      color: var(--gold); border: 1px solid var(--gold);
+      border-radius: 14px;
+      font-weight: 600; font-size: 16px; cursor: pointer;
+      text-decoration: none; display: inline-block;
+      transition: all 0.3s;
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(212, 175, 55, 0.1);
+    }
+    
+    .products {
+      padding: 80px 0;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .section-tag {
+      color: var(--gold); font-size: 14px;
+      font-weight: 600; margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+    
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px; font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .section-desc {
+      color: #aaa; font-size: 16px;
+      max-width: 600px; margin: 0 auto;
+      line-height: 1.7;
+    }
+    
+    .products-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    
+    .product-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      border-radius: 20px; padding: 25px;
+      transition: all 0.4s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(212, 175, 55, 0.4);
+      box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2);
+    }
+    
+    .product-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #ff3b30 0%, #ff1744 100%);
+      color: #fff; padding: 5px 12px;
+      border-radius: 8px; font-size: 11px;
+      font-weight: 700; margin-bottom: 15px;
+    }
+    
+    .stock-counter {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba(255, 149, 0, 0.9);
+      color: #000;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    
+    .product-img {
+      width: 100%; height: 200px; object-fit: cover;
+      border-radius: 15px; margin-bottom: 20px;
+    }
+    
+    .product-name {
+      font-size: 20px; font-weight: 600;
+      margin-bottom: 10px;
+    }
+    
+    .product-short {
+      font-size: 14px; color: #aaa;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+    
+    .product-price {
+      display: flex; align-items: baseline; gap: 10px;
+      margin-bottom: 15px;
+    }
+    
+    .price-new {
+      font-size: 24px; font-weight: 700;
+      color: var(--gold);
+    }
+    
+    .price-old {
+      font-size: 16px; color: #666;
+      text-decoration: line-through;
+    }
+    
+    .stats-bar {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 20px; padding: 60px 0;
+      border-top: 1px solid rgba(212, 175, 55, 0.1);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+      margin-top: 80px;
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px; font-weight: 700;
+      color: var(--gold);
+    }
+    
+    .stat-label {
+      font-size: 14px; color: #888;
+      margin-top: 8px;
+    }
+    
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      z-index: 2000;
+      backdrop-filter: blur(12px);
+      overflow-y: auto;
+      padding: 20px;
+    }
+    
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .modal-content {
+      background: var(--dark-gray);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 25px;
+      padding: 0;
+      max-width: 900px;
+      width: 100%;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    
+    .modal-close {
+      position: absolute;
+      top: 20px; right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      color: #888;
+      z-index: 10;
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(0,0,0,0.5);
+      border-radius: 50%;
+    }
+    
+    .modal-close:hover {
+      color: var(--gold);
+    }
+    
+    .product-detail-header {
+      padding: 40px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    
+    .product-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    
+    .product-detail-img {
+      width: 100%;
+      border-radius: 20px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    
+    .product-detail-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+    
+    .feature-list {
+      list-style: none;
+    }
+    
+    .feature-list li {
+      padding: 10px 0;
+      display: flex; align-items: flex-start; gap: 12px;
+      color: #ccc;
+      font-size: 15px;
+    }
+    
+    .feature-list li::before {
+      content: '✓';
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 18px;
+    }
+    
+    .purity-proof {
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 15px;
+      padding: 20px;
+      margin: 25px 0;
+    }
+    
+    .purity-proof h4 {
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    
+    .review-section {
+      padding: 35px 40px;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    
+    .review-item {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 15px;
+      border: 1px solid rgba(212, 175, 55, 0.1);
+    }
+    
+    .review-header {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 12px;
+    }
+    
+    .review-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; color: #000;
+    }
+    
+    .order-section {
+      padding: 35px 40px;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      background: rgba(0,0,0,0.3);
+    }
+    
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block; margin-bottom: 10px; font-size: 14px;
+      color: #bbb; font-weight: 500;
+    }
+    
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 15px; border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(0, 0, 0, 0.4); color: #fff; font-size: 15px;
+      font-family: 'Hind Siliguri', sans-serif;
+    }
+    
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      outline: none; border-color: var(--gold); 
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+    }
+    
+    .total-box {
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 18px; border-radius: 15px; margin: 20px 0;
+    }
+    
+    .total-row {
+      display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 14px;
+    }
+    
+    .total-final {
+      display: flex; justify-content: space-between; font-weight: 700;
+      font-size: 20px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.1);
+      color: var(--gold);
+    }
+    
+    .about {
+      padding: 100px 0;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+    }
+    
+    .about-img {
+      width: 100%; border-radius: 20px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    
+    .faq {
+      padding: 100px 0;
+    }
+    
+    .faq-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      border-radius: 15px; margin-bottom: 15px;
+      overflow: hidden;
+    }
+    
+    .faq-question {
+      padding: 20px 25px;
+      font-weight: 600; font-size: 16px;
+      cursor: pointer;
+      display: flex; justify-content: space-between;
+      align-items: center;
+    }
+    
+    .faq-answer {
+      padding: 0 25px 20px;
+      color: #aaa; font-size: 15px;
+      line-height: 1.7;
+      display: none;
+    }
+    
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+    
+    footer {
+      padding: 60px 0 30px;
+      border-top: 1px solid rgba(212, 175, 55, 0.1);
+      margin-top: 80px;
+    }
+    
+    .footer-content {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px; margin-bottom: 40px;
+    }
+    
+    .footer-col h3 {
+      font-size: 18px; margin-bottom: 20px;
+      color: var(--gold);
+    }
+    
+    .footer-col ul {
+      list-style: none;
+    }
+    
+    .footer-col ul li {
+      margin-bottom: 12px;
+    }
+    
+    .footer-col ul li a {
+      color: #888; text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+    
+    .footer-col ul li a:hover {
+      color: var(--gold);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(212, 175, 55, 0.1);
+      color: #666; font-size: 14px;
+    }
+    
+    @media(max-width: 968px) {
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .about { grid-template-columns: 1fr; }
+      .product-detail-grid { grid-template-columns: 1fr; }
+      .footer-content { grid-template-columns: 1fr 1fr; }
+      .hero h1 { font-size: 48px; }
+    }
+    
+    @media(max-width: 640px) {
+      .hero h1 { font-size: 36px; }
+      .products-grid { grid-template-columns: 1fr; }
+      .stats-bar { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .footer-content { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="honey-drip" style="left: 10%; animation-delay: 0s;"></div>
+  <div class="honey-drip" style="left: 30%; animation-delay: 1s;"></div>
+  <div class="honey-drip" style="left: 50%; animation-delay: 2s;"></div>
+  <div class="honey-drip" style="left: 70%; animation-delay: 3s;"></div>
+  <div class="honey-drip" style="left: 90%; animation-delay: 4s;"></div>
+
+  <nav>
+    <div class="container nav-content">
+      <div class="logo">Land of Bengal</div>
+      <ul class="nav-links">
+        <li><a href="#products">প্রোডাক্ট</a></li>
+        <li><a href="#about">আমাদের কথা</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="https://wa.me/8801837218731">যোগাযোগ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">🌿 ১০% খাঁটি | ল্যাব টেস্টেড | সুন্দরবন সোর্সড</div>
+      <h1>Land of Bengal</h1>
+      <p>সুন্দরবনের গভীর জঙ্গল থেকে সরাসরি সংগৃহীত ১০% খাঁটি চাকের মধু। ভেজাল প্রমাণে ১০০% টাকা ফেরত গ্যারান্টি।</p>
+      <div class="hero-btns">
+        <a href="#products" class="btn-primary">এখনই অর্ডার করুন</a>
+        <a href="https://wa.me/8801837218731" class="btn-secondary">WhatsApp এ কথা বলুন</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">আমাদের প্রোডাক্ট</div>
+        <h2 class="section-title">বেস্ট সেলিং কালেকশন</h2>
+        <p class="section-desc">প্রতিটি প্রোডাক্ট ক্লিক করে বিস্তারিত দেখুন। খাঁটির প্রমাণ, ফিচার ও রিভিউ সহ।</p>
+      </div>
+      
+      <div class="products-grid">
+        
+        <div class="product-card" onclick="openProductModal(0)">
+          <div class="product-badge">HOT</div>
+          <div class="stock-counter">স্টক: ৮</div>
+          <img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924?w=600" alt="Honey" class="product-img">
+          <h3 class="product-name">সুন্দরবনের খাঁটি মধু</h3>
+          <p class="product-short">সুন্দরবনের গভীর জঙ্গল থেকে সংগৃহীত ১০% খাঁটি চাকের মধু।</p>
+          <div class="product-price">
+            <span class="price-new">৳১০৯২</span>
+            <span class="price-old">৳১২০০</span>
+          </div>
+          <button class="btn-primary" style="width: 100%;">বিস্তারিত দেখুন</button>
+        </div>
+        
+        <div class="product-card" onclick="openProductModal(1)">
+          <div class="product-badge">NEW</div>
+          <div class="stock-counter">স্টক: ৭</div>
+          <img src="https://images.unsplash.com/photo-1626497764746-6dc36546b388?w=600" alt="Panjabi" class="product-img">
+          <h3 class="product-name">প্রিমিয়াম পাঞ্জাবী</h3>
+          <p class="product-short">১০% কটনের আরামদায়ক পাঞ্জাবী। প্রিমিয়াম ফিনিশিং।</p>
+          <div class="product-price">
+            <span class="price-new">৳২২৪০</span>
+            <span class="price-old">৳২৮০</span>
+          </div>
+          <button class="btn-primary" style="width: 100%;">বিস্তারিত দেখুন</button>
+        </div>
+        
+        <div class="product-card" onclick="openProductModal(2)">
+          <div class="stock-counter">স্টক: ৬</div>
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560526f3ad?w=600" alt="Headphone" class="product-img">
+          <h3 class="product-name">ওয়্যারলেস হেডফোন</h3>
+          <p class="product-short">৪০ ঘণ্টা ব্যাটারি ব্যাকআপ। নয়েজ ক্যান্সেলেশন।</p>
+          <div class="product-price">
+            <span class="price-new">৳১৬২০</span>
+            <span class="price-old">৳১৮০</span>
+          </div>
+          <button class="btn-primary" style="width: 100%;">বিস্তারিত দেখুন</button>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-bar">
+    <div class="container" style="display: contents;">
+      <div class="stat-item">
+        <div class="stat-number">৫০+</div>
+        <div class="stat-label">সন্তুষ্ট কাস্টমার</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">১০%</div>
+        <div class="stat-label">খাঁটি গ্যারান্টি</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">২৪/৭</div>
+        <div class="stat-label">কাস্টমার সাপোর্ট</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">৩ বছর</div>
+        <div class="stat-label">বিশ্বাসের সাথে</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container" style="display: contents;">
+      <img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924?w=800" alt="Honey" class="about-img">
+      <div>
+        <div class="section-tag">আমাদের কথা</div>
+        <h2 class="section-title">কেন Land of Bengal?</h2>
+        <p class="section-desc">
+          আমরা সরাসরি সুন্দরবনের মৌয়ালদের কাছ থেকে মধু সংগ্রহ করি। প্রতিটি ব্যাচ ল্যাবে টেস্ট করা হয়। 
+          মাঝখানে কোনো দাল নেই, তাই দামও রিজনেবল।
+        </p>
+        <ul class="feature-list">
+          <li>ল্যাব টেস্ট রিপোর্ট পাবেন প্রতিটি অর্ডারে</li>
+          <li>ভেজাল প্রমাণ হলে ১০% টাকা ফেরত</li>
+          <li>ক্যাশ অন ডেলিভারি সারা বাংলাদেশে</li>
+          <li>২০০ টাকার উপরে অর্ডারে ফ্রি ডেলিভারি</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-tag" style="text-align: center;">প্রশ্ন ও উত্তর</div>
+      <h2 class="section-title" style="text-align: center;">জানতে চান?</h2>
+      
+      <div style="max-width: 700px; margin: 50px auto 0;">
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            মধু কি সত্যিই ১০% খাঁটি?
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+            হ্যাঁ। আমরা প্রতিটি ব্যাচ বাংলাদেশ স্ট্যান্ডার্ডস টেস্টিং ইনস্টিটিউটে টেস্ট করাই। রিপোর্ট কপি অর্ডারের সাথে দিয়ে দেই। ভেজাল পেলে ১০% টাকা ফেরত দেই।
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            ডেলিভারি কত দিন লাগে?
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+            চট্টগ্রাম সিটিতে ২৪ ঘণ্টা। ঢাকা ও অন্যান্য জেলায় ২-৩ দিন। ক্যাশ অন ডেলিভারি সুবিধা আছে।
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            অর্ডার কিভাবে করবো?
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+            প্রোডাক্টে ক্লিক করে ডিটেইল পেইজে যান। তারপর অর্ডার ফর্ম পূরণ করুন। অথবা WhatsApp এ মেসেজ দিন।
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        
+        <div class="footer-col">
+          <h3>Land of Bengal</h3>
+          <p style="color: #888; line-height: 1.7; font-size: 14px;">
+            সুন্দরবনের খাঁটি অমৃত। সরাসরি প্রকৃতি থেকে আপনার ঘরে।
+          </p>
+        </div>
+        
+        <div class="footer-col">
+          <h3>কুইক লিংক</h3>
+          <ul>
+            <li><a href="#products">প্রোডাক্ট</a></li>
+            <li><a href
