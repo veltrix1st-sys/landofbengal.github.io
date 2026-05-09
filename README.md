@@ -1,1 +1,1 @@
- Landofbengal.github.io
+landofbengal.github.io
